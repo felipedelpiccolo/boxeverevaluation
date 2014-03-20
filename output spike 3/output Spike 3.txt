@@ -26,7 +26,7 @@ File->Import->General->Existing Projects into Workspace
 
 
 I found out that Play provides a way of creating non-blocking or asynchronuos executions by extending the Job class and overriding the method doJob or doJobWithResult. Also the client has to call the method now() in Job class so the execution of the doJob method will be made in a non-blocking way.
-
+To do that I used the technique described here: http://www.playframework.com/documentation/1.2.5/jobs
 An example of that can be found in the Main.home and MainJob classes of the webAppPOC. 
 
 If you execute the application on http://localhost:9000/Main/home and you check the log on the console you will see that the job continues running in background and the HTTP request finish instantly.
