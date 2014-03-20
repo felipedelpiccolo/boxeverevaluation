@@ -1,0 +1,59 @@
+User Story Planning:
+
+Original US Acceptance criteria:
+The web application is running
+
+            - The end-user browsers the application URL.
+
+            - The end-user is presented with a visualisation containing the EUR-USD data points plotted for the last 90 days.
+
+            - The end-user can select other rates of exchange from a menu displaying the available conversions.
+
+            - The end-user can force a real-time non-blocking refresh of the currently selected exchange rate.
+
+            - The end-user can force a real-time refresh of all exchange rates concurrently.
+			
+
+The original US is split into the following US:
+
+
+US-1 - As a end-user I want to be able to visualize the conversion rates for the last 90 days for EUR-USD currencies
+
+Acceptance criteria:
+	
+			- The end-user browsers the application URL.
+
+            - The end-user is presented with a visualisation containing the EUR-USD data points plotted for the last 90 days.
+			
+US-2 - As a end-user I want to be able to select rates of exchange from a menu in the GUI
+			
+Acceptance criteria:
+
+			- The end-user browsers the application URL.
+			
+			- The end-user is presented with a menu to select rates of exchange.
+			
+			- When the end-user selects one rate of exchange from the menu the data paint plotted for the last 90 days is presented.
+
+US-3 - As a end-user I want to be able to force a real-time non-blocking refresh of the currently selected exchange rate
+Acceptance criteria:
+
+			- The end-user can force a real-time non-blocking refresh of the currently selected exchange rate by.
+			
+US-4 - as a end-user I want to be able to force a real-time refresh of all exchange rates concurrently.
+
+Acceptance criteria:
+
+	        - The end-user can force a real-time refresh of all exchange rates concurrently.
+			
+			
+
+			
+After analysis the following spikes where identify:
+
+
+Spike-1 - Spike to find out how to use Exchange Rate API in an non-blocking fashion
+
+Spike-2 - Spike to find out how to store data in Cassandra & Astynax and when to use what
+
+Spike-3 - Spike to find out how to create a web application with HTML, REST and non-blocking mechanism in Playframework version 1.2.5 

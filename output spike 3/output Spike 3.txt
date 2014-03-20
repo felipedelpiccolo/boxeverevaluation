@@ -1,0 +1,39 @@
+As an output of this spike I proved that payframework 1.2.5 can be used to create web applications and non-blocking REST servicies.
+
+Documentation on how to use playframework 1.2.5 can be found here:
+
+http://www.playframework.com/documentation/1.2.5/home
+
+Documentation on how to integrate play with any IDE can be found here:
+
+http://www.playframework.com/documentation/1.2.5/ide
+
+This is the link to download playframwork
+
+http://downloads.typesafe.com/releases/play-1.2.5.zip
+
+
+Also as an output of this a basic POC was created to prove this can be done:
+
+Application can be found in the directory webAppPOC
+The application can be runnned executing 
+#play run webAppPOC 
+from the command line.
+
+Application is ready to be inserted in eclipse as a general project doing:
+
+File->Import->General->Existing Projects into Workspace
+
+
+I found out that Play provides a way of creating non-blocking or asynchronuos executions by extending the Job class and overriding the method doJob or doJobWithResult. Also the client has to call the method now() in Job class so the execution of the doJob method will be made in a non-blocking way.
+
+An example of that can be found in the Main.home and MainJob classes of the webAppPOC. 
+
+If you execute the application on http://localhost:9000/Main/home and you check the log on the console you will see that the job continues running in background and the HTTP request finish instantly.
+
+
+I also found out that the previous technique doesn't help you if you want to make very long executions and wait for an answer from that execution without blocking the HTTP request.
+To do that I used the technique described here: http://www.playframework.com/documentation/1.2.5/asynchronous
+An example of that can be found in the Main.longProcess class of the webAppPOC. The most important thing in that method is the await(promise) . the await method suspend the execution until it gets a response but without blocking the HTTP request.
+
+If you execute the application on http://localhost:9000/Main/longProcess then open the same URL in another tab before the first page is loaded you will see that both requests will be executed without blocking eachother. 
