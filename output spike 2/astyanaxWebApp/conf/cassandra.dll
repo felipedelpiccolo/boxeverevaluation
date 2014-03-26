@@ -1,0 +1,9 @@
+CREATE KEYSPACE astyanaxPOC WITH 
+strategy_class = SimpleStrategy 
+AND strategy_options:replication_factor = 1;
+
+USE astyanaxPOC;
+
+CREATE TABLE users ( 
+firstname varchar PRIMARY KEY, 
+lastname varchar );

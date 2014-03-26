@@ -1,0 +1,24 @@
+As an output of this spike I checked what Astynax really is and how to use it with cassandra.
+
+Astynax is a JAVA client developed by Netfix to interact with cassandra DB, this client offers many features like:
+
+High level, simple object oriented interface to Cassandra.
+Fail-over behaviour on the client side.
+Connection pool abstraction. Implementation of a round robin connection pool.
+Monitoring abstraction to get event notification from the connection pool.
+Complete encapsulation of the underlying Thrift API and structs.
+Automatic retry of downed hosts.
+Automatic discovery of additional hosts in the cluster.
+Suspension of hosts for a short period of time after several timeouts.
+Annotations to simplify use of composite columns.
+
+More information can be found in here: http://techblog.netflix.com/2012/01/announcing-astyanax.html
+
+
+The Apache Cassandra database is a column oriented database that suits when you need scalability and high-availability without compromising performance.
+
+
+Also as an output of this spike I created a web app in play to show how to use astyanax together with play and cassandra. 
+The application can be found in the folder astyanaxWebApp. Only configuration needed is install cassandra 1.1.12 and create keyspaces and column families executing the scripts in conf/cassandra.dll
+Then you can run the application as usual with play run. Accessing http://localhost:9000/users/list you can see and create Users.
+

@@ -1,0 +1,18 @@
+#{extends 'main.html' /}
+#{set title:'Users - All' /}
+
+#{form @Users.create(), method:'POST', id:'creationForm',
+       enctype:'multipart/form-data' }
+   First Name: <input type="text" id="firstname" name="firstname"/> <br>
+   Last Name: <input type="text" id="lastname" name="lastname"/> <br>
+   <input type="submit" value="Create"/>
+#{/form}
+
+
+<p>Users:</p>
+#{list items:users, as:'user'}
+<ul>
+	<li>First Name: ${user.firstname}</li>
+	<li>Last Name: ${user.lastname}</li>
+</ul>
+#{/list}
